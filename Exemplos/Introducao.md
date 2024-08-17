@@ -22,5 +22,5 @@ struct Estrutura;
 
 5 - Arquivo Texto:  
 fopen("../arquivo.txt", "w");  
-fopen("..;arquivo.bin", "wb");
+fopen("../arquivo.bin", "wb");
 
