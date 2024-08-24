@@ -40,6 +40,7 @@ void apresentar_usuario(char usuario[], int tlUsuario);
 int recuperar_servidor(char email[], char servidor[]);
 void apresentar_servidor(char servidor[], int tlServidor);
 int verificar_email(char email[], int tlEmail);
+int verificar_br(char servidor[], int tlServidor);
 //------------------------------------------------------------------------------------
 
 // passo 1, main.
@@ -51,16 +52,15 @@ int main(){
     char usuario[TF];   // "fulano"
     char servidor[TF];  // "@gmail.com"
 
-    int tlUsuario, tlServidor, tlEmail, validade = 0;
+    int tlUsuario, tlServidor, tlEmail, validade = 0, brasileiro = 0;
 
     printf("Digite o email: ");
     do{
         tlEmail = ler_email(email);
         validade = verificar_email(email, tlEmail);
         validade ? : printf("Digite um email valido! \n");
-        
+
     }while (!validade);
-    
     printf("TL: %d", tlEmail);
     printf("\n-----------------\n");
 
@@ -76,6 +76,10 @@ int main(){
 
     validade = verificar_email(email, tlEmail);
     validade ? printf("Valido \n") : printf("Invalido");
+    printf("\n-----------------\n");
+
+    brasileiro = verificar_br(servidor, tlServidor);
+    brasileiro ? printf("Brasil") : printf("Nao brasileiro");
 
     return 0;
 }
@@ -154,6 +158,7 @@ void apresentar_servidor(char servidor[], int tlServidor){
 }
 // passo 7: verificar validade.
 int verificar_email(char email[], int tlEmail){
+
     int valido = 0;
     int espaco = 0, arroba = 0, ponto = 0;
     int i;
@@ -168,4 +173,15 @@ int verificar_email(char email[], int tlEmail){
         valido = 1;
     }
     return valido;
+}
+// passo 8: verificar se é do brasil
+int verificar_br(char servidor[], int tlServidor){
+    // se for do brasil termina em "br"
+    int brasileiro = 0;
+
+    if(servidor[tlServidor - 2] == 'b' && servidor[tlServidor - 1] == 'r'){
+        brasileiro = 1;
+    }
+
+    return brasileiro;
 }
