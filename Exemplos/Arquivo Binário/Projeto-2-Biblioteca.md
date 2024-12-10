@@ -18,7 +18,7 @@ numero do tombo, título, autores, ano, quantidade de empréstimo e situação.
 Para que o programa ajude a Roberta no controle dos livros emprestados, ele deve
 permitir realizar as seguintes atividades:  
 
-1. ncluir novos livros, a situação desse livro deve ser D – Disponível e a quantidade de empréstimos deve ser 0;  
+1. Incluir novos livros, a situação desse livro deve ser D – Disponível e a quantidade de empréstimos deve ser 0;  
 
 2. Alterar, pesquisar e excluir/recuperar livros, como também a exclusão física dos registros excluídos logicamente. Quando alterar, a quantidade de empréstimos não deve ser alterada.
 
